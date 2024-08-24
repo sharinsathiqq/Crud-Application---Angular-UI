@@ -1,0 +1,46 @@
+<div class="student-list">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Profile Photo</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>DOB</th>
+        <th>Department</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td><img [src]="'http://localhost:32167/api/ProfilePhoto/' + student.profilePhotoFile" alt="Profile Photo" width="50"></td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.emailID }}</td>
+        <td>{{ student.phoneNumber }}</td>
+        <td>{{ student.dob | date }}</td>
+        <td>{{ student.departmentName }}</td> 
+        <td>
+          <button (click)="deleteStudent(student.id)" class="btn btn-danger btn-sm">Delete</button>
+          <button (click)="editStudent(student.id)" class="btn btn-primary btn-sm">Edit</button>
+          <button (click)="Studentcard(student.id)" class="btn btn-secondary btn-sm">Print</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Print section for individual student profile -->
+<div id="printSection" class="print-section">
+  <div class="profile-card" *ngIf="studentToPrint">
+    <div class="profile-header">
+      <td><img [src]="'http://localhost:32167/api/ProfilePhoto/' + studentToPrint.profilePhotoFile" alt="Profile Photo" width="50"></td>
+    </div>
+    <div class="profile-body">
+      <p><strong>Name:</strong> {{ studentToPrint.name }}</p>
+      <p><strong>Email:</strong> {{ studentToPrint.emailID }}</p>
+      <p><strong>Phone:</strong> {{ studentToPrint.phoneNumber }}</p>
+      <p><strong>DOB:</strong> {{ studentToPrint.dob | date }}</p>
+      <p><strong>Department:</strong> {{ studentToPrint.departmentName }}</p>
+    </div>
+  </div>
+</div>

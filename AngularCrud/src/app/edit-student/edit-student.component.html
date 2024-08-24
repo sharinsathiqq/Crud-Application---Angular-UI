@@ -1,0 +1,78 @@
+<div class="container">
+  <h2>Edit Student</h2>
+  <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Id Field -->
+    <div>
+      <label for="id">Id</label>
+      <input id="id" formControlName="id" readonly />
+      <div *ngIf="studentForm.controls['id'].touched && studentForm.controls['id'].invalid">
+        <small *ngIf="studentForm.controls['id'].errors?.['required']">Id is required.</small>
+      </div>
+    </div>
+    
+    <!-- Name Field -->
+    <div>
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" />
+      <div *ngIf="studentForm.controls['name'].touched && studentForm.controls['name'].invalid">
+        <small *ngIf="studentForm.controls['name'].errors?.['required']">Name is required.</small>
+        <small *ngIf="studentForm.controls['name'].errors?.['minlength']">Name must be at least 3 characters long.</small>
+      </div>
+    </div>
+
+    <!-- Email Field -->
+    <div>
+      <label for="emailID">Email</label>
+      <input id="emailID" formControlName="emailID" />
+      <div *ngIf="studentForm.controls['emailID'].touched && studentForm.controls['emailID'].invalid">
+        <small *ngIf="studentForm.controls['emailID'].errors?.['required']">Email is required.</small>
+        <small *ngIf="studentForm.controls['emailID'].errors?.['email']">Invalid email format.</small>
+      </div>
+    </div>
+
+    <!-- Phone Number Field -->
+    <div>
+      <label for="phoneNumber">Phone Number</label>
+      <input id="phoneNumber" formControlName="phoneNumber" />
+      <div *ngIf="studentForm.controls['phoneNumber'].touched && studentForm.controls['phoneNumber'].invalid">
+        <small *ngIf="studentForm.controls['phoneNumber'].errors?.['required']">Phone number is required.</small>
+        <small *ngIf="studentForm.controls['phoneNumber'].errors?.['pattern']">Invalid phone number format.</small>
+      </div>
+    </div>
+
+    <!-- Date of Birth Field -->
+    <div>
+      <label for="dob">Date of Birth</label>
+      <input id="dob" type="date" formControlName="dob" />
+      <div *ngIf="studentForm.controls['dob'].touched && studentForm.controls['dob'].invalid">
+        <small *ngIf="studentForm.controls['dob'].errors?.['required']">Date of birth is required.</small>
+      </div>
+    </div>
+
+    <!-- Department Field -->
+    <div>
+      <label for="departmentId">Department</label>
+      <select id="departmentId" formControlName="departmentId" class="form-control">
+        <option *ngFor="let department of departments" [value]="department.departmentId">
+          {{ department.departmentName }}
+        </option>
+      </select>
+      <div *ngIf="studentForm.controls['departmentId'].touched && studentForm.controls['departmentId'].invalid">
+        <small *ngIf="studentForm.controls['departmentId'].errors?.['required']">Department is required.</small>
+      </div>
+    </div>
+
+    <!-- Profile Photo Field -->
+    <div>
+      <label for="profilePhotoFile">Profile Photo</label>
+      <input id="profilePhotoFile" type="file" (change)="onFileSelected($event)" />
+      <div *ngIf="profilePhotoFile">
+        <img [src]="profilePhotoFile" alt="Profile Photo" width="150" height="150" />
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-success" [disabled]="studentForm.invalid">Save Student</button>
+  </form>
+</div>

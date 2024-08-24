@@ -1,0 +1,23 @@
+<div class="student-card" id="studentCard">
+  <div class="card-front">
+    <!-- Front of the card -->
+    <img src="assets/ID card/IDfront.jpg" alt="Card Front" class="card-template">
+    <img src="assets/ID card/IDback.jpg" alt="Card Bank" class="card-template">
+    
+
+    <!-- Profile Photo -->
+    <img [src]="profilePhotoFile" alt="Profile Photo" class="profile-photo">
+
+    <!-- Student Information -->
+    <div class="student-info">
+      <p> {{ student?.name }} </p>
+      <p> {{ student?.emailID }}</p>
+      <p>{{ student?.phoneNumber }}</p>
+      <p> {{ dob }}</p>
+      <p> {{ student?.departmentName }}</p>
+    </div>
+  </div>
+</div>
+
+<!-- Print button -->
+<button (click)="printIDCard()">Print ID Card</button>
