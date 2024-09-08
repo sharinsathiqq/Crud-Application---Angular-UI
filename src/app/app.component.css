@@ -1,0 +1,77 @@
+/* Navbar styling */
+.navbar {
+  height: 70px;
+  width: 100%;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 18px;
+}
+
+.dummy-button {
+  background-color: #c41919;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+/* Main content styling */
+.Content {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 70px); /* Full height minus the navbar height */
+}
+
+.main-content {
+  display: flex;
+  height: 100%; /* Ensure full height for the content area */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #111;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar .nav-link {
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.sidebar .nav-link:hover {
+  background-color: #575757;
+  color: white;
+}
+
+.container {
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.container.mt-4 {
+  margin-top: 20px;
+}
+
+.router-outlet {
+  width: 100%;
+}

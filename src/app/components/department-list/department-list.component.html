@@ -1,0 +1,26 @@
+<div class="container">
+  <h2>Department List</h2>
+  <table class="department-list">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let department of departments">
+        <td>{{ department.departmentName }}</td>
+        <td>
+          <!-- Delete Button with Trash Icon -->
+          <button (click)="deleteDepartment(department.departmentId)" class="btn btn-danger btn-sm">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+          <!-- Edit Button with Edit Icon -->
+          <button (click)="editDepartment(department.departmentId)" class="btn btn-primary btn-sm">
+            <i class="fas fa-edit"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

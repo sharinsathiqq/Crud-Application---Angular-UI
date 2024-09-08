@@ -1,0 +1,42 @@
+<div class="student-list">
+  <table class="student-list">
+    <thead>
+      <tr>
+        <th>Profile Photo</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>DOB</th>
+        <th>Department</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <td><img [src]="'http://localhost:32167/api/ProfilePhoto/' + student.profilePhotoFile" alt="Profile Photo" width="50"></td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.emailID }}</td>
+        <td>{{ student.phoneNumber }}</td>
+        <td>{{ student.dob | date }}</td>
+        <td>{{ student.departmentName }}</td>
+        <td>{{ student.address }}</td>
+        <td>
+          <!-- Delete Button with Trash Icon -->
+          <button (click)="deleteStudent(student.id)" class="btn btn-danger btn-sm">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+          <!-- Edit Button with Edit Icon -->
+          <button (click)="editStudent(student.id)" class="btn btn-primary btn-sm">
+            <i class="fas fa-edit"></i>
+          </button>
+          <!-- Print Button with Print Icon -->
+          <button (click)="Studentcard(student.id)" class="btn btn-secondary btn-sm">
+            <i class="fas fa-print"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

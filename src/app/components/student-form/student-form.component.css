@@ -1,0 +1,64 @@
+
+
+.container {
+    width: 100%;
+    max-width: 500px; /* Limit the width of the form */
+    padding: 20px;
+    background-color: #fff; /* White background for the form */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: left; /* Center content within the form */
+}
+
+.container h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.container form {
+    width: 100%;
+}
+
+.container label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.container input[type="text"], 
+.container input[type="email"], 
+.container input[type="number"], 
+.container input[type="date"], 
+.container input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.container input[type="file"] {
+    padding: 5px;
+}
+
+.container button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3498db; /* Blue color for the submit button */
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.container button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}

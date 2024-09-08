@@ -1,0 +1,19 @@
+
+.jumbotron {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.3rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .jumbotron h1 {
+    font-size: 3rem; /* Larger font size for the heading */
+    color: #343a40; /* Dark text color */
+  }
+  
+  .jumbotron p {
+    font-size: 1.5rem; /* Medium font size for the paragraph */
+    color: #6c757d; /* Slightly darker text color */
+  }
+  

@@ -1,0 +1,25 @@
+<div class="homepage">
+  <!-- Navigation bar on top -->
+  <div class="navbar">
+    <div class="nav-links">
+      <a class="nav-link" href="javascript:void(0)">CRUD APPLICATION</a>
+      <p>ID card</p>
+    </div>
+    <button class="dummy-button">LOGOUT</button>
+  </div>
+
+  <!-- Sidebar and Content Container in the same div using Flexbox -->
+  <div class="Content">
+    <div class="main-content">
+      <div class="sidebar">
+        <a class="nav-link" routerLink="/students"><b>Students</b></a>
+        <a class="nav-link" routerLink="/students/add"><b>Add Student</b></a>
+        <a class="nav-link" routerLink="/departments"><b>Departments</b></a>
+        <a class="nav-link" routerLink="/departments/add"><b>Add Department</b></a>
+      </div>
+      <div class="container mt-4">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

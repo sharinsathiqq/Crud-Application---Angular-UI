@@ -1,0 +1,116 @@
+.student-card {
+  width: 300px;
+  margin: 0 auto;
+  background-color: #fff;
+  position: relative; /* Make sure relative positioning is enabled */
+}
+
+.card-front {
+  position: relative;
+  width: 100%;
+}
+
+.card-template {
+  width: 100%;
+  height: auto;
+}
+
+/* Profile Photo Placement */
+.profile-photo {
+  width: 80px; /* Adjust width according to the box size */
+  height: 40pxpx; /* Adjust height according to the box size */
+  position: absolute;
+  top: 65px; /* Adjust to match the exact position of the box */
+  left: 16px; /* Adjust to match the exact position of the box */
+  z-index: 2;
+  border: none; /* Remove any borders */
+  border-radius: 0; /* Remove circular shape */
+  object-fit: cover; /* Ensure the image covers the box without stretching */
+}
+
+/* Student Info styling */
+
+
+.student-info .student-name {
+  font-weight: bold;
+  position: absolute;
+  font-size: 8px;
+  top: 86px; /* Adjust to position text correctly */
+  left: 170px; /* Align this with the right of the profile photo */
+  color: black;
+}
+.student-info .student-department {
+  font-weight: bold; /* Emphasize the department */
+  position: absolute;
+  font-size: 8px;
+  top: 110px; /* Adjust to position text correctly */
+  left: 170px; /* Align this with the right of the profile photo */
+  color: black;
+}
+.student-info .student-id {
+font-weight: bold; /* Emphasize the department */
+position: absolute;
+font-size: 8px;
+top: 135px; /* Adjust to position text correctly */
+left: 170px; /* Align this with the right of the profile photo */
+color: black;
+}
+.student-info .student-email {
+font-weight: bold; /* Emphasize the department */
+position: absolute;
+font-size: 8px;
+top: 290px; /* Adjust to position text correctly */
+left: 70px; /* Align this with the right of the profile photo */
+color: black;
+}
+.student-info .student-phone {
+  font-weight: bold; /* Emphasize the department */
+  position: absolute;
+  font-size: 8px;
+  top: 270px; /* Adjust to position text correctly */
+  left: 70px; /* Align this with the right of the profile photo */
+  color: black;
+  }
+  .student-info .student-dob {
+    font-weight: bold; /* Emphasize the department */
+    position: absolute;
+    font-size: 8px;
+    top: 246px; /* Adjust to position text correctly */
+    left: 70px; /* Align this with the right of the profile photo */
+    color: black;
+    }
+    
+
+
+/* Button Styling */
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Print Specific Styles */
+@media print {
+  body * {
+    visibility: hidden; /* Hide everything else */
+  }
+
+  .student-card {
+    visibility: visible;
+    width: 100%;
+    margin: 0;
+  }
+
+  button {
+    display: none;
+  }
+}
