@@ -1,5 +1,13 @@
 <div class="student-list">
-  <table class="table table-striped">
+    <!-- Search bar -->
+    <div class="search-bar">
+      <div class="search-container">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Search..."  />
+      </div>
+    </div>
+  
+  <table class="student-list">
     <thead>
       <tr>
         <th>Profile Photo</th>
@@ -8,39 +16,36 @@
         <th>Phone</th>
         <th>DOB</th>
         <th>Department</th>
+        <th>Address</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let student of students">
-        <td><img [src]="'http://localhost:32167/api/ProfilePhoto/' + student.profilePhotoFile" alt="Profile Photo" width="50"></td>
+        <td>
+          <img [src]="'http://localhost:32167/api/ProfilePhoto/' + student.profilePhotoFile" alt="Profile Photo" width="50">
+        </td>
         <td>{{ student.name }}</td>
         <td>{{ student.emailID }}</td>
         <td>{{ student.phoneNumber }}</td>
         <td>{{ student.dob | date }}</td>
-        <td>{{ student.departmentName }}</td> 
+        <td>{{ student.departmentName }}</td>
+        <td>{{ student.address }}</td>
         <td>
-          <button (click)="deleteStudent(student.id)" class="btn btn-danger btn-sm">Delete</button>
-          <button (click)="editStudent(student.id)" class="btn btn-primary btn-sm">Edit</button>
-          <button (click)="Studentcard(student.id)" class="btn btn-secondary btn-sm">Print</button>
+          <!-- Delete Button with Trash Icon and Tooltip -->
+          <button (click)="deleteStudent(student.id)" class="btn btn-danger btn-sm" title="Delete">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+          <!-- Edit Button with Edit Icon and Tooltip -->
+          <button (click)="editStudent(student.id)" class="btn btn-primary btn-sm" title="Edit">
+            <i class="fas fa-edit"></i>
+          </button>
+          <!-- Print Button with Print Icon and Tooltip -->
+          <button (click)="Studentcard(student.id)" class="btn btn-secondary btn-sm" title="Print">
+            <i class="fas fa-print"></i>
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
-</div>
-
-<!-- Print section for individual student profile -->
-<div id="printSection" class="print-section">
-  <div class="profile-card" *ngIf="studentToPrint">
-    <div class="profile-header">
-      <td><img [src]="'http://localhost:32167/api/ProfilePhoto/' + studentToPrint.profilePhotoFile" alt="Profile Photo" width="50"></td>
-    </div>
-    <div class="profile-body">
-      <p><strong>Name:</strong> {{ studentToPrint.name }}</p>
-      <p><strong>Email:</strong> {{ studentToPrint.emailID }}</p>
-      <p><strong>Phone:</strong> {{ studentToPrint.phoneNumber }}</p>
-      <p><strong>DOB:</strong> {{ studentToPrint.dob | date }}</p>
-      <p><strong>Department:</strong> {{ studentToPrint.departmentName }}</p>
-    </div>
-  </div>
 </div>

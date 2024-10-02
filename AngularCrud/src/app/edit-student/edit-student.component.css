@@ -1,127 +1,73 @@
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
 
-/* Container Styles */
+
 .container {
-  background-color: #ffffff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  max-width: 600px;
-  margin: 20px;
-}
-
-/* Header Styles */
-.container h2 {
-  margin-bottom: 20px;
-  font-size: 28px;
-  color: #333;
-  text-align: center;
-}
-
-/* Form Styles */
-form {
+  max-width: 600px; /* Limit the width of the form */
+  padding: 20px;
+  background-color: #fff; /* White background for the form */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   display: flex;
   flex-direction: column;
+  margin: 20px auto; /* Center the container with margin */
 }
 
-form div {
+.container h2 {
+  text-align: center;
   margin-bottom: 20px;
-  position: relative;
+  font-size: 24px;
+  color: #333;
 }
 
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
+.container form {
+  width: 100%;
+}
+
+.container label {
   display: block;
-  color: #495057;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #555;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="date"],
-input[type="file"],
-input[type="number"] {
+.container input[type="text"], 
+.container input[type="email"], 
+.container input[type="number"], 
+.container input[type="date"], 
+.container input[type="file"] {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
   box-sizing: border-box;
-  transition: border-color 0.3s, box-shadow 0.3s;
-  font-size: 16px;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="date"]:focus,
-input[type="file"]:focus,
-input[type="number"]:focus {
-  border-color: #80bdff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+.container input[type="file"] {
+  padding: 5px;
 }
 
-/* Validation Message Styles */
-small {
-  color: #e74c3c;
-  position: absolute;
-  bottom: -18px;
-  left: 0;
-  font-size: 12px;
-}
-
-/* Profile Photo Preview */
-img {
+.container img.profile-photo-small {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
   margin-top: 10px;
-  border-radius: 5px;
-  border: 2px solid #ddd;
-  display: block;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow around the image */
 }
 
-/* Button Styles */
-button[type="submit"] {
-  background-color: #28a745;
-  color: #fff;
-  padding: 10px 15px;
+.container button {
+  width: 100%;
+  padding: 10px;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 4px;
+  background-color: #2ecc71; /* Green color for the save button */
+  color: #fff;
   font-size: 16px;
-  transition: background-color 0.3s;
-  align-self: center;
-  width: 50%;
+  cursor: pointer;
+  margin-top: 20px;
 }
 
-button[type="submit"]:hover {
-  background-color: #218838;
-}
-
-button[type="submit"]:disabled {
-  background-color: #d6d8db;
-  cursor: not-allowed;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-      padding: 20px;
-  }
-
-  form div {
-      margin-bottom: 15px;
-  }
-
-  button[type="submit"] {
-      width: 100%;
-  }
+.container button:hover {
+  background-color: #27ae60; /* Darker green on hover */
 }

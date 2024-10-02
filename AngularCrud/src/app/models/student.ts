@@ -6,7 +6,8 @@ export interface Student {
   phoneNumber: string;
   dob: Date;
   departmentId : string;
-  departmentName: string;
+  departmentName?: string;
+  address: string;
   profilePhotoFile: string; 
   
  

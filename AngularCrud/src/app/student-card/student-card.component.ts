@@ -6,7 +6,6 @@ import { StudentService } from '../services/student.service';
 import { Student } from '../models/student';
 import { HttpErrorResponse } from '@angular/common/http';
 
-
 @Component({
   selector: 'app-student-card',
   templateUrl: './student-card.component.html',
@@ -34,12 +33,13 @@ export class StudentCardComponent implements OnInit {
     const day = ('0' + date.getDate()).slice(-2);
     return `${year}-${month}-${day}`;
   }
+
   ngOnInit(): void {
     this.fetchDepartments(); 
     this.studentService.getStudent(this.studentId).subscribe(
       (data: Student) => {
         this.student = data;
-        console.log(this.student);
+        console.log(this.student); // Check if ID and other details are here
         this.dob = this.formatDate(new Date(this.student.dob));
         this.selectedDepartmentId = this.student.departmentId;
         this.studentService.getProfilePhotoUrl(this.student.profilePhotoFile).subscribe(
@@ -54,24 +54,39 @@ export class StudentCardComponent implements OnInit {
             console.error('Error fetching profile photo:', error.message);
           }
         );
+        this.mapDepartmentNames(); // Ensure department names are mapped
       },
       (error: HttpErrorResponse) => {
         console.error('Error fetching student:', error.message);
       }
     );
   }
+  
 
   fetchDepartments(): void {
     this.studentService.getDepartments().subscribe(
       (data: any[]) => {
         this.departments = data;
-        console.log(this.departments)
-      },
+        console.log(this.departments);
 
+        // Call mapDepartmentNames after fetching department data
+        this.mapDepartmentNames();
+      },
       (error: HttpErrorResponse) => {
         console.error('Error fetching departments:', error.message);
       }
     );
+  }
+
+  mapDepartmentNames(): void {
+    if (this.student && this.departments.length > 0) {
+      const department = this.departments.find(dep => dep.departmentId === this.student!.departmentId);
+      if (department) {
+        this.student.departmentName = department.departmentName;
+      } else {
+        this.student.departmentName = 'Unknown';
+      }
+    }
   }
 
   printIDCard() {

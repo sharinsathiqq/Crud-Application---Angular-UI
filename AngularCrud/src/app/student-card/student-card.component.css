@@ -16,54 +16,79 @@
 }
 
 /* Profile Photo Placement */
-
-
 .profile-photo {
-  width: 100px; /* Adjust width according to the box size */
-  height: 120px; /* Adjust height according to the box size */
+  width: 80px; /* Adjust width according to the box size */
+  height: 40pxpx; /* Adjust height according to the box size */
   position: absolute;
-  top: 230px; /* Adjust to match the exact position of the box */
-  left: 5px; /* Adjust to match the exact position of the box */
-  bottom: 10px;
+  top: 65px; /* Adjust to match the exact position of the box */
+  left: 16px; /* Adjust to match the exact position of the box */
   z-index: 2;
   border: none; /* Remove any borders */
   border-radius: 0; /* Remove circular shape */
   object-fit: cover; /* Ensure the image covers the box without stretching */
 }
-.name-section {
-  top: 210px; /* Adjust to match the Name section location */
-  left: 140px; /* Adjust to match alignment */
-  font-weight: bold;
-}
- 
-
-
 
 /* Student Info styling */
-.student-info {
-  position: absolute;
-  top: 130px; /* Adjust to position text correctly */
-  left: 110px; /* Align this with the right of the profile photo */
-  color: black;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  z-index: 2; /* Ensure this is above the template */
-}
 
-.student-info p {
-  margin: 5px 0; /* Space out the text properly */
-}
 
-/* Adjust the Department section if it's below the card */
-.department-info {
-  position: absolute;
-  top: 200px; /* Adjust this based on the card's layout */
-  left: 20px;
-  font-size: 14px;
+.student-info .student-name {
   font-weight: bold;
+  position: absolute;
+  font-size: 8px;
+  top: 86px; /* Adjust to position text correctly */
+  left: 170px; /* Align this with the right of the profile photo */
   color: black;
-  z-index: 2;
 }
+.student-info .student-department {
+  font-weight: bold; /* Emphasize the department */
+  position: absolute;
+  font-size: 8px;
+  top: 110px; /* Adjust to position text correctly */
+  left: 170px; /* Align this with the right of the profile photo */
+  color: black;
+}
+.student-info .student-id {
+font-weight: bold; /* Emphasize the department */
+position: absolute;
+font-size: 8px;
+top: 135px; /* Adjust to position text correctly */
+left: 170px; /* Align this with the right of the profile photo */
+color: black;
+}
+.student-info .student-email {
+font-weight: bold; /* Emphasize the department */
+position: absolute;
+font-size: 8px;
+top: 290px; /* Adjust to position text correctly */
+left: 70px; /* Align this with the right of the profile photo */
+color: black;
+}
+.student-info .student-phone {
+  font-weight: bold; /* Emphasize the department */
+  position: absolute;
+  font-size: 8px;
+  top: 270px; /* Adjust to position text correctly */
+  left: 70px; /* Align this with the right of the profile photo */
+  color: black;
+  }
+  .student-info .student-dob {
+    font-weight: bold; /* Emphasize the department */
+    position: absolute;
+    font-size: 8px;
+    top: 246px; /* Adjust to position text correctly */
+    left: 70px; /* Align this with the right of the profile photo */
+    color: black;
+    }
+    .student-info .student-address {
+      font-weight: bold; /* Emphasize the department */
+      position: absolute;
+      font-size: 8px;
+      top: 310px; /* Adjust to position text correctly */
+      left: 70px; /* Align this with the right of the profile photo */
+      color: black;
+      }
+    
+
 
 /* Button Styling */
 button {

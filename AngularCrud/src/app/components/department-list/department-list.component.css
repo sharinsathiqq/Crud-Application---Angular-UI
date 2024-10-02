@@ -1,61 +1,65 @@
 .container {
-    margin: 20px auto;
-    max-width: 100%;
-    padding: 0 20px;
-}
-
-.student-list {
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
+    width: 100%;
+    max-width: 850px; /* Slightly increased the max-width */
+    padding: 30px;
     background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: calc(100% - 40px); /* Subtract padding */
-    margin: 0 auto;
+    border-radius: 12px; /* Larger border radius for a more modern look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for more depth */
+    display: flex;
+    flex-direction: column;
+    margin: 40px auto; /* Center the container with auto margins */
 }
 
-.student-list h2 {
+.container h2 {
     text-align: center;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 10px;
-    font-size: 24px;
+    margin-bottom: 25px;
+    font-size: 28px; /* Larger, more prominent heading */
+    font-weight: 600;
+    color: #2c3e50; /* Darker color for the heading */
 }
 
-.student-list table {
+.department-list {
     width: 100%;
     border-collapse: collapse;
 }
 
-.student-list th, .student-list td {
-    padding: 12px;
+.department-list th, .department-list td {
+    padding: 16px;
     text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
-.student-list th {
-    background-color: #f5f5f5;
+.department-list th {
+    background-color: #ecf0f1; /* Light grey header background */
+    text-align: center;
+    font-weight: bold;
+    color: #2c3e50; /* Darker text for the headers */
+    text-transform: uppercase; /* Capitalize header text */
+    letter-spacing: 1px; /* Slight letter spacing for a more refined look */
 }
 
-.student-list tr:nth-child(even) {
-    background-color: #f9f9f9;
+.department-list tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light grey for even rows */
 }
 
-.student-list img {
-    border-radius: 50%;
+.department-list td {
+    background-color: #fff;
+    color: #34495e; /* Darker grey for better contrast */
 }
 
-button {
-    padding: 6px 12px;
+.department-list td button {
+    padding: 10px 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
-    margin-right: 5px; /* Add margin to separate buttons */
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 button.delete {
     background-color: #e74c3c;
     color: #fff;
+    margin-right: 10px;
 }
 
 button.edit {
@@ -64,9 +68,16 @@ button.edit {
 }
 
 button.delete:hover {
-    background-color: #c0392b;
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
 }
 
 button.edit:hover {
-    background-color: #2980b9;
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+button.delete:active,
+button.edit:active {
+    transform: scale(0.95); /* Press effect */
 }

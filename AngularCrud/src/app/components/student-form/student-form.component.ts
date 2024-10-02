@@ -27,7 +27,8 @@ export class StudentFormComponent implements OnInit {
       emailID: ['', [Validators.required, Validators.email]],
       phoneNumber: ['', Validators.required],
       dob: ['', Validators.required],
-      departmentId: ['', Validators.required]
+      departmentId: ['', Validators.required],
+      address:['',Validators.required]
       
     });
   }
@@ -62,6 +63,8 @@ export class StudentFormComponent implements OnInit {
     formData.append('phoneNumber', this.f['phoneNumber'].value);
     formData.append('dob', this.f['dob'].value);
     formData.append('departmentId', this.f['departmentId'].value);
+    formData.append('address',this.f['address'].value);
+
     
     if (this.selectedFile) {
       formData.append('file', this.selectedFile);

@@ -1,139 +1,79 @@
-.container {
-    margin: 20px auto;
-    max-width: 1500px;
-}
-
+/* Table styling for student list */
 .student-list {
-    border: 1px solid #ddd;
-    text-align: center;
-    border-radius: 4px;
-    overflow: hidden;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.student-list h2 {
-    text-align: center;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 10px;
-    font-size: 24px;
-}
-
-.student-list table {
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
 }
 
 .student-list th, .student-list td {
-    padding: 12px;
-    text-align: center;
-
-    border-bottom: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
 }
 
+/* Removing all background color */
 .student-list th {
-    background-color: #f5f5f5;
+  background-color: rgb(212, 209, 209); /* Remove grey background for table header */
+}
+
+.student-list tr {
+  background-color: rgb(255, 255, 255); /* Remove grey background for all rows */
 }
 
 .student-list tr:nth-child(even) {
-    background-color: #f9f9f9;
+  background-color: white; /* Ensure no grey on even rows */
 }
 
 .student-list img {
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 button {
-    padding: 6px 12px;
-    border: none; 
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 6px 12px;
+  border: none; 
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px; /* Add space between buttons */
 }
 
 button.delete {
-    background-color: #e74c3c;
-    color: #fff;
-    margin-right: 10px; /* Add margin to the right of delete button */
+  background-color: #e74c3c;
+  color: #fff;
 }
 
 button.edit {
-    background-color: #3498db;
-    color: #fff;
+  background-color: #3498db;
+  color: #fff;
 }
 
-button.delete:hover {
-    background-color: #c0392b;
+button.print {
+  background-color: #000000;
+  color: #fff;
+}
+.search-bar {
+  flex-grow: 1;
+  margin-left: 20px;
+  left: 10px;
 }
 
-button.edit:hover {
-    background-color: #2980b9;
+.search-container {
+  position: relative;
+  display: inline-block;
 }
 
-.student-list table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-  .student-list td, .student-list th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  .student-list img.profile-photo-small {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-  }
-  
-  .profile-card {
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    margin: 20px auto;
-    background-color: #fff;
-  }
-  
-  .profile-header {
-    background-color: #f4f4f4;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .profile-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .profile-body {
-    padding: 20px;
-  }
-  
-  .profile-body p {
-    margin: 10px 0;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  .profile-body strong {
-    color: #555;
-  }
-  
-  /* Print styles */
-  @media print {
-    .student-list {
-      display: none;
-    }
-    .print-section {
-      display: block;
-    }
-  }
-  
-  
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.search-container input {
+  padding: 8px 8px 8px 32px; /* Adjust padding to leave space for the icon */
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+

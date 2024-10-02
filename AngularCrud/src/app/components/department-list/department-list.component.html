@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Department List</h2>
-  <table class="table table-striped">
+  <table class="department-list">
     <thead>
       <tr>
         <th>Name</th>
@@ -11,12 +11,16 @@
       <tr *ngFor="let department of departments">
         <td>{{ department.departmentName }}</td>
         <td>
-          <button (click)="deleteDepartment(department.departmentId)" class="btn btn-danger">Delete</button>
-          <button (click)="editDepartment(department.departmentId)" class="btn btn-primary">Edit</button>
+          <!-- Delete Button with Trash Icon -->
+          <button (click)="deleteDepartment(department.departmentId)" class="btn btn-danger btn-sm" title="Delete">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+          <!-- Edit Button with Edit Icon -->
+          <button (click)="editDepartment(department.departmentId)" class="btn btn-primary btn-sm" title="Edit">
+            <i class="fas fa-edit"></i>
+          </button>
         </td>
       </tr>
     </tbody>
   </table>
 </div>
-
-

@@ -1,24 +1,28 @@
-<!DOCTYPE html>
-<html>
-<div class="navbar">
-  <div class="nav-links">
-    <a class="nav-link" href="javascript:void(0)">CRUD APPLICATION</a>
-    <p>ID card</p>
+<div class="homepage">
+  <!-- Navigation bar on top -->
+  <div class="navbar">
+    <div class="nav-links">
+      <a class="nav-link" href="javascript:void(0)"><b>STUDENT DASHBOARD</b></a>
+      <p></p>
+    </div>
+    <!-- Logout button -->
+    <div class="nav-links">
+      <button class="logout-button"><b>Logout</b></button>
+    </div>
   </div>
-  <button class="dummy-button">LOGOUT</button>
+ 
+
+
+  <!-- Sidebar and Content Container in the same div using Flexbox -->
+  <div class="content">
+    <div class="sidebar">
+      <a class="nav-link" routerLink="/students"><b>Student List</b></a>
+      <a class="nav-link" routerLink="/students/add"><b>New Student</b></a>
+      <a class="nav-link" routerLink="/departments"><b>Department List</b></a>
+      <a class="nav-link" routerLink="/departments/add"><b>New Department</b></a>
+    </div>
+    <div class="main-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
-
-<div class="sidebar">
-  <a class="nav-link" routerLink="/students"><b>Students</b></a>
-  <a class="nav-link" routerLink="/students/add"><b>Add Student</b></a>
-  <a class="nav-link" routerLink="/departments"><b>Departments</b></a>
-  <a class="nav-link" routerLink="/departments/add"><b>Add Department</b></a>
-</div>
-
-
-<div class="container mt-4">
-  <router-outlet></router-outlet>
-</div>
-
-
-</html>

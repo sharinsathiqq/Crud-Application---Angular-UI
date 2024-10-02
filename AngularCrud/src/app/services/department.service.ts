@@ -8,51 +8,61 @@ import { Department } from '../models/department';
   providedIn: 'root'
 })
 export class DepartmentService {
-  private apiUrl = 'http://localhost:32167/api/Department'; // Update this URL based on your API
+  private apiUrl = 'http://localhost:32167/api/Department'; // Ensure this URL is correct and points to your API
 
   constructor(private http: HttpClient) {}
 
+  // Get all departments
   getDepartments(): Observable<Department[]> {
     return this.http.get<Department[]>(this.apiUrl).pipe(
-      catchError(this.handleError)
+      catchError(this.handleError) // Catch errors
     );
   }
 
+  // Get a specific department by ID
   getDepartment(id: number): Observable<Department> {
     return this.http.get<Department>(`${this.apiUrl}/${id}`).pipe(
-      catchError(this.handleError)
+      catchError(this.handleError) // Catch errors
     );
   }
 
+  // Add a new department
   addDepartment(department: Department): Observable<Department> {
     return this.http.post<Department>(this.apiUrl, department).pipe(
-      catchError(this.handleError)
+      catchError(this.handleError) // Catch errors
     );
   }
 
-  updateDepartment(id: number, department: Department): Observable<void> {
-    return this.http.put<void>(`${this.apiUrl}/${id}`, department).pipe(
-      catchError(this.handleError)
+  // Update an existing department
+  updateDepartment(id: number, department: Department): Observable<Department> {
+    return this.http.put<Department>(`${this.apiUrl}/${id}`, department).pipe(
+      catchError(this.handleError) // Catch errors
     );
   }
 
+  // Delete a department by ID
   deleteDepartment(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
-      catchError(this.handleError)
+      catchError(this.handleError) // Catch errors
     );
   }
 
-  // Handle any errors that occur during HTTP requests
+  // Centralized error handling function
   private handleError(error: HttpErrorResponse): Observable<never> {
-    let errorMessage = 'An unknown error occurred!';
+    let errorMessage: string;
+
     if (error.error instanceof ErrorEvent) {
       // Client-side or network error
-      errorMessage = `Error: ${error.error.message}`;
+      errorMessage = `A client-side error occurred: ${error.error.message}`;
     } else {
       // Backend returned an unsuccessful response code
-      errorMessage = `Server returned code: ${error.status}, error message is: ${error.message}`;
+      errorMessage = `Backend returned code ${error.status}, message was: ${error.message}`;
     }
+
+    // Log the error message to the console for debugging
     console.error(errorMessage);
+
+    // Rethrow the error to be handled by the component
     return throwError(() => new Error(errorMessage));
   }
 }
