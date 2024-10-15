@@ -1,20 +1,21 @@
-
 .container {
     width: 100%;
-    max-width: 800px; /* Limit the width of the list container */
-    padding: 20px;
-    background-color: #fff; /* White background for the list */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 850px; /* Slightly increased the max-width */
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px; /* Larger border radius for a more modern look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for more depth */
     display: flex;
     flex-direction: column;
+    margin: 40px auto; /* Center the container with auto margins */
 }
 
 .container h2 {
     text-align: center;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+    margin-bottom: 25px;
+    font-size: 28px; /* Larger, more prominent heading */
+    font-weight: 600;
+    color: #2c3e50; /* Darker color for the heading */
 }
 
 .department-list {
@@ -23,36 +24,41 @@
 }
 
 .department-list th, .department-list td {
-    padding: 12px;
-    text-align: center; /* Align text to the left */
+    padding: 16px;
+    text-align: center;
     border-bottom: 1px solid #ddd;
 }
 
 .department-list th {
-    background-color: #f5f5f5;
+    background-color: #ecf0f1; /* Light grey header background */
     text-align: center;
     font-weight: bold;
-    color: #333;
+    color: #2c3e50; /* Darker text for the headers */
+    text-transform: uppercase; /* Capitalize header text */
+    letter-spacing: 1px; /* Slight letter spacing for a more refined look */
 }
 
 .department-list tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #f9f9f9; /* Light grey for even rows */
 }
 
 .department-list td {
-    background-color: #fdfdfd;
+    background-color: #fff;
+    color: #34495e; /* Darker grey for better contrast */
 }
 
-button {
-    padding: 8px 16px;
+.department-list td button {
+    padding: 10px 16px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
 }
 
 button.delete {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: #e74c3c;
+    color: #fff;
     margin-right: 10px;
 }
 
@@ -62,9 +68,16 @@ button.edit {
 }
 
 button.delete:hover {
-    background-color: #c0392b;
+    background-color: #c0392b; /* Darker red on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
 }
 
 button.edit:hover {
-    background-color: #2980b9;
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+button.delete:active,
+button.edit:active {
+    transform: scale(0.95); /* Press effect */
 }

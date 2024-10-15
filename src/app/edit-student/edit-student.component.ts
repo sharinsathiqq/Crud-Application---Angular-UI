@@ -35,6 +35,7 @@ export class EditStudentComponent implements OnInit {
       phoneNumber: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
       dob: [''],
       departmentId: ['', Validators.required], // Updated with Validators.required
+      address:['',Validators.required],
       profilePhotoFile: [null]
     });
 
@@ -137,14 +138,17 @@ export class EditStudentComponent implements OnInit {
 
     if (this.student) {
       const formData = new FormData();
+      formData.append('id', this.f['id'].value);
       formData.append('name', this.f['name'].value);
       formData.append('emailID', this.f['emailID'].value);
       formData.append('phoneNumber', this.f['phoneNumber'].value);
       formData.append('dob', this.f['dob'].value);
       formData.append('departmentId', this.f['departmentId'].value);
+      formData.append('address', this.f['address'].value);
       if (this.selectedFile) {
-        formData.append('profilePhotoFile', this.selectedFile);
+        formData.append('file', this.selectedFile);
       }
+      console.log(formData);
 
       this.http.put<any>(`http://localhost:32167/api/student/${this.studentId}`, formData).subscribe({
         next: (response) => {

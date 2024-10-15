@@ -12,11 +12,11 @@
         <td>{{ department.departmentName }}</td>
         <td>
           <!-- Delete Button with Trash Icon -->
-          <button (click)="deleteDepartment(department.departmentId)" class="btn btn-danger btn-sm">
+          <button (click)="deleteDepartment(department.departmentId)" class="btn btn-danger btn-sm" title="Delete">
             <i class="fas fa-trash-alt"></i>
           </button>
           <!-- Edit Button with Edit Icon -->
-          <button (click)="editDepartment(department.departmentId)" class="btn btn-primary btn-sm">
+          <button (click)="editDepartment(department.departmentId)" class="btn btn-primary btn-sm" title="Edit">
             <i class="fas fa-edit"></i>
           </button>
         </td>

@@ -1,77 +1,140 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Styling for the homepage container */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full height of the viewport */
+}
+
+/* Content styling using Flexbox for Sidebar and Main Content */
+.content {
+  flex: 1;
+  display: flex;
+  height: 100%; /* Occupy remaining height */
+  margin-top: 70px; /* Offset by navbar height */
+}
+
+/* Sidebar styling */
+.sidebar {
+  width: 250px; /* Fixed width for the sidebar */
+  background-color: #000; /* Black sidebar */
+  padding-top: 0;
+  position: fixed; /* Sidebar stays fixed on the left */
+  top: 70px; /* Below the navbar */
+  left: 0;
+  height: calc(100vh - 70px); /* Full height minus navbar */
+  z-index: 1; /* Ensure it stays on top */
+}
+
+.sidebar a {
+  padding: 15px 20px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  display: block;
+}
+
+.sidebar a:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Main content styling */
+.main-content {
+  flex-grow: 1; /* Ensure the content takes up remaining space */
+  padding: 20px;
+  margin-left: 250px; /* Offset by the sidebar width */
+  background-color: #fff;
+  height: calc(100vh - 70px); /* Full height minus navbar */
+  overflow-y: auto; /* Scrollable content */
+}
+
 /* Navbar styling */
 .navbar {
   height: 70px;
   width: 100%;
   background-color: #111;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  z-index: 2; /* Keep navbar on top */
 }
 
-.nav-links {
+.navbar .nav-links {
   display: flex;
-  align-items: center;
+  gap: 15px;
 }
 
-.nav-link {
+.navbar .nav-links a {
   color: white;
   text-decoration: none;
-  margin-right: 15px;
   font-size: 18px;
+  padding: 10px;
 }
 
-.dummy-button {
-  background-color: #c41919;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 4px;
+.navbar .nav-links a:hover {
+  background-color: #ffffff;
+  color: #000000;
 }
 
-/* Main content styling */
-.Content {
-  display: flex;
-  flex-direction: column;
-  height: calc(100vh - 70px); /* Full height minus the navbar height */
+/* Hover effect for sidebar items */
+.sidebar a:hover {
+  background-color: #ffffff;
+  color: #000000;
 }
 
-.main-content {
-  display: flex;
-  height: 100%; /* Ensure full height for the content area */
-}
-
-.sidebar {
-  width: 250px;
-  background-color: #111;
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar .nav-link {
-  color: white;
-  padding: 10px 15px;
-  text-decoration: none;
-  font-size: 18px;
-}
-
-.sidebar .nav-link:hover {
-  background-color: #575757;
+/* Selected sidebar item */
+.sidebar a.selected {
+  background-color: #000;
   color: white;
 }
 
+.sidebar a.selected:hover {
+  background-color: #000; /* Keeps the selected color on hover */
+  color: white;
+}
+
+/* Main content container for flex behavior */
 .container {
-  flex-grow: 1;
-  padding: 20px;
-  background-color: #f4f4f4;
+  padding: 40px;
+  background-color: #ffffff; /* Pure white background */
+  margin: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+  border: 1px solid #ddd; /* Optional border */
 }
 
-.container.mt-4 {
-  margin-top: 20px;
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px; /* Smaller sidebar for small screens */
+  }
+
+  .main-content {
+    margin-left: 200px; /* Adjust main content offset */
+  }
 }
 
-.router-outlet {
-  width: 100%;
+@media (max-width: 576px) {
+  .sidebar {
+    display: none; /* Hide sidebar on mobile */
+  }
+
+  .main-content {
+    margin-left: 0; /* Remove margin when sidebar is hidden */
+  }
 }

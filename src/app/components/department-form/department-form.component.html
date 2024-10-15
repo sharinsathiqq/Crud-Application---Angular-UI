@@ -1,11 +1,10 @@
 <div class="container">
-    <h2>{{ departmentId ? 'Edit' : 'Add' }} Department</h2>
-    <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="departmentName">Department Name</label>
-        <input id="departmentName" formControlName="departmentName" class="form-control">
-      </div>
-      <button type="submit" class="btn btn-primary">{{ departmentId ? 'Update' : 'Add' }}</button>
-    </form>
-  </div>
-  
+  <h2>{{ departmentId ? 'Edit' : 'Add' }} Department</h2>
+  <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="departmentName">Department Name</label>
+      <input id="departmentName" formControlName="departmentName" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary">{{ departmentId ? 'Update' : 'Add' }}</button>
+  </form>
+</div>

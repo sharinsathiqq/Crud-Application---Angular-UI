@@ -1,22 +1,22 @@
-
-
 .container {
     width: 100%;
-    max-width: 500px; /* Limit the width of the form */
-    padding: 20px;
+    max-width: 600px; /* Slightly increased the max-width for a more spacious form */
+    padding: 25px;
     background-color: #fff; /* White background for the form */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 12px; /* Larger border radius for a smoother look */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for better depth */
     display: flex;
     flex-direction: column;
-    align-items: left; /* Center content within the form */
+    align-items: flex-start; /* Left align the form items */
+    margin: 40px auto; /* Center the form on the page with some margin */
 }
 
 .container h2 {
     text-align: left;
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+    margin-bottom: 25px;
+    font-size: 28px; /* Larger, more prominent heading */
+    font-weight: 600;
+    color: #2c3e50; /* Darker text color for better contrast */
 }
 
 .container form {
@@ -25,40 +25,59 @@
 
 .container label {
     display: block;
-    font-size: 14px;
-    margin-bottom: 5px;
-    color: #555;
+    font-size: 16px; /* Increased font size for better readability */
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #34495e; /* Softer gray for a modern look */
 }
 
 .container input[type="text"], 
 .container input[type="email"], 
 .container input[type="number"], 
 .container input[type="date"], 
-.container input[type="file"] {
+.container input[type="file"], 
+.container select {
     width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #bdc3c7;
+    border-radius: 6px;
+    font-size: 15px;
     box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+.container input[type="text"]:focus, 
+.container input[type="email"]:focus, 
+.container input[type="number"]:focus, 
+.container input[type="date"]:focus, 
+.container input[type="file"]:focus, 
+.container select:focus {
+    border-color: #3498db; /* Blue border on focus for better interactivity */
+    outline: none;
 }
 
 .container input[type="file"] {
-    padding: 5px;
+    padding: 8px;
 }
 
 .container button {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     background-color: #3498db; /* Blue color for the submit button */
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: 600;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .container button:hover {
     background-color: #2980b9; /* Darker blue on hover */
+}
+
+.container button:active {
+    background-color: #1a5a85; /* Even darker blue on click */
 }

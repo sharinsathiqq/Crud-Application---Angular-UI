@@ -79,6 +79,14 @@ color: black;
     left: 70px; /* Align this with the right of the profile photo */
     color: black;
     }
+    .student-info .student-address {
+      font-weight: bold; /* Emphasize the department */
+      position: absolute;
+      font-size: 8px;
+      top: 310px; /* Adjust to position text correctly */
+      left: 70px; /* Align this with the right of the profile photo */
+      color: black;
+      }
     
 
 

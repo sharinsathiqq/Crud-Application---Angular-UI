@@ -14,6 +14,9 @@ import { EditStudentComponent } from './edit-student/edit-student.component';
 import { StudentService } from './services/student.service';
 import { StudentCardComponent } from './student-card/student-card.component';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +27,7 @@ import { StudentCardComponent } from './student-card/student-card.component';
     HomeComponent,
     EditStudentComponent,
     StudentCardComponent,
+   
   ],
   imports: [
     BrowserModule,

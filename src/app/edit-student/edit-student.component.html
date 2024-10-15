@@ -63,6 +63,14 @@
       </div>
     </div>
 
+    <div>
+      <label for="address">Address</label>
+      <input id="address" formControlName="address" />
+      <div *ngIf="studentForm.controls['address'].touched && studentForm.controls['address'].invalid">
+        <small *ngIf="studentForm.controls['address'].errors?.['required']">address is required.</small>
+      </div>
+    </div>
+
     <!-- Profile Photo Field -->
     <div>
       <label for="profilePhotoFile">Profile Photo</label>
