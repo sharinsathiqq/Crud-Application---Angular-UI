@@ -13,8 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { EditStudentComponent } from './edit-student/edit-student.component';
 import { StudentService } from './services/student.service';
 import { StudentCardComponent } from './student-card/student-card.component';
-import { LoginComponent } from './login/login.component';
-import { LayoutComponent } from './layout/layout.component';
+
 
 
 
@@ -28,8 +27,7 @@ import { LayoutComponent } from './layout/layout.component';
     HomeComponent,
     EditStudentComponent,
     StudentCardComponent,
-    LoginComponent,
-    LayoutComponent,
+   
   ],
   imports: [
     BrowserModule,
